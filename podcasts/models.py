@@ -28,7 +28,7 @@ class Podcast(models.Model):
 class Episode(models.Model):
     title = models.CharField(max_length=50,null=True, blank=True)
     link=models.URLField(max_length=255, null=True, blank=True)
-    release_date = models.CharField(max_length=100)
+    release_date = models.DateTimeField()
     author = models.CharField(max_length=50, null=True)
     duration = models.CharField(max_length=25)
     description = models.TextField(null=True, blank=True)
