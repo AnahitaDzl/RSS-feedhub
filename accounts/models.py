@@ -14,4 +14,4 @@ class User(AbstractUser, PermissionsMixin):
 class Subscription(models.Model):
         subscription_date = models.DateField()
         user = models.ForeignKey(User, on_delete=models.PROTECT)
-        podcast = models.ForeignKey(User, on_delete=models.PROTECT)
+        podcast = models.ForeignKey(Podcast, on_delete=models.PROTECT)
