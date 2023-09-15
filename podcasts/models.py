@@ -25,4 +25,15 @@ class Podcast(models.Model):
     def __str__(self):
         return self.title
 
+class Episode(models.Model):
+    title = models.CharField(max_length=50,null=True, blank=True)
+    link=models.URLField(max_length=255, null=True, blank=True)
+    release_date = models.CharField(max_length=100)
+    author = models.CharField(max_length=50, null=True)
+    duration = models.CharField(max_length=25)
+    description = models.TextField(null=True, blank=True)
+    image = models.URLField(max_length=255, null=True, blank=True)
+    podcast = models.ForeignKey(Podcast, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return self.title
